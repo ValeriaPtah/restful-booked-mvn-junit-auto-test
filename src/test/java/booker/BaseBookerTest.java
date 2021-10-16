@@ -17,6 +17,7 @@ public class BaseBookerTest {
     @AfterClass
     public static void after() {
         RestAssured.basePath = "";
+        RestAssured.requestSpecification = null;
         RestAssured.responseSpecification = null;
     }
 
