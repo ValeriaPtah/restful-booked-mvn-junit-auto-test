@@ -1,0 +1,20 @@
+# Local project configurations #
+*.iml
+.classpath
+.project
+.settings/
+.idea/
+
+# Output folder #
+target/
+out/
+build/
+classes/
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db
