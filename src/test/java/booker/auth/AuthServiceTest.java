@@ -35,8 +35,8 @@ public class AuthServiceTest extends BaseBookerTest {
                 .build();
 
         RestAssured.given()
-                .when()
                 .body(BookingHelper.toJson(creds, Credentials.class))
+                .when()
                 .post()
                 .then()
                 .body("$", hasKey("token"));

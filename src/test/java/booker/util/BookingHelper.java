@@ -23,20 +23,18 @@ public class BookingHelper {
     private static final Moshi MOSHI = new Moshi.Builder().build();
 
     public static String token() {
-        String path = "/auth";
         RequestSpecification requestSpec = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
                 .setBody("{ \"username\" : \"admin\", \"password\" : \"password123\"}")
                 .build();
 
-        return given(requestSpec).post(path).path("token");
+        return given(requestSpec).post("https://restful-booker.herokuapp.com/auth").path("token");
     }
 
     public static Integer randomBookingID() {
-        String path = "/booking";
         Response resp = given()
                 .contentType(ContentType.JSON)
-                .get(path)
+                .get()
                 .then()
                 .extract()
                 .response();

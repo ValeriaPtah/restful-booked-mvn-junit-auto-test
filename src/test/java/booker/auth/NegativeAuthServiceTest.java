@@ -41,8 +41,8 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .build();
 
         RestAssured.given()
-                .when()
                 .body(BookingHelper.toJson(creds, Credentials.class))
+                .when()
                 .post()
                 .then()
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
@@ -55,8 +55,8 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .build();
 
         RestAssured.given()
-                .when()
                 .body(BookingHelper.toJson(creds, Credentials.class))
+                .when()
                 .post()
                 .then()
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
@@ -70,8 +70,8 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .build();
 
         RestAssured.given()
-                .when()
                 .body(BookingHelper.toJson(creds, Credentials.class))
+                .when()
                 .post()
                 .then()
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
@@ -85,8 +85,8 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .build();
 
         RestAssured.given()
-                .when()
                 .body(BookingHelper.toJson(creds, Credentials.class))
+                .when()
                 .post()
                 .then()
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
@@ -100,8 +100,8 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .build();
 
         RestAssured.given()
-                .when()
                 .body(BookingHelper.toJson(creds, Credentials.class))
+                .when()
                 .post()
                 .then()
                 .statusCode(HttpStatus.SC_UNAUTHORIZED);
