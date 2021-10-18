@@ -30,12 +30,5 @@ Training public API: [Restful Booker API](https://restful-booker.herokuapp.com)
    ```sh
    git clone https://github.com/ValeriePtah/restful-booked-mvn-junit-auto-test.git
    ```
-2. Make sure to have Java15 JDK setup in your project (both project and Maven configurations)
-3. To see all the console output run _tests_ from the Maven toolbar
-   ```
-   Gradle > Tasks > verification > test
-   ```
-4. To see Allure report **after** running the tests, run _allureServe_ from the Gradle toolbar
-   ```
-   Gradle > Tasks > verification > allureServe
-   ```
+2. Make sure to have **Java 15** JDK setup in your project (both project and Maven configurations)
+3. To see all the console output run `mvn test` from the Terminal / command line
