@@ -32,12 +32,9 @@ public class BookingHelper {
     }
 
     public static Integer randomBookingID() {
-        Response resp = given()
-                .contentType(ContentType.JSON)
+        Response resp = given().contentType(ContentType.JSON)
                 .get()
-                .then()
-                .extract()
-                .response();
+                .then().extract().response();
         List<Map<String, Integer>> bookingIDs = resp.jsonPath().getList("$");
         return bookingIDs.get(RandomUtils.nextInt(0, bookingIDs.size())).get("bookingid");
     }

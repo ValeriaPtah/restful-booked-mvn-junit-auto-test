@@ -7,6 +7,7 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
+import org.apache.http.HttpStatus;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -19,11 +20,10 @@ public class AuthServiceTest extends BaseBookerTest {
         RestAssured.basePath = "/auth";
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
-                .setAccept(ContentType.TEXT)
                 .build();
         RestAssured.responseSpecification = new ResponseSpecBuilder()
                 .expectContentType(ContentType.JSON)
-                .expectStatusCode(200)
+                .expectStatusCode(HttpStatus.SC_OK)
                 .build();
     }
 

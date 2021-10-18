@@ -7,6 +7,7 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
+import org.apache.http.HttpStatus;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -30,7 +31,7 @@ public class BookingServiceTest extends BaseBookerTest {
                 .setContentType(ContentType.JSON)
                 .build();
         RestAssured.responseSpecification = new ResponseSpecBuilder()
-                .expectStatusCode(200)
+                .expectStatusCode(HttpStatus.SC_OK)
                 .expectContentType(ContentType.JSON)
                 .build();
     }
