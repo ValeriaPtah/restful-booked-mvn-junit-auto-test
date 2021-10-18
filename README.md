@@ -15,8 +15,6 @@
 
 Training public API: [Restful Booker API](https://restful-booker.herokuapp.com)
 
-<!-- GETTING STARTED -->
-## Getting Started
 ### Prerequisites
 
 * Make sure you have annotation processing enabled:
