@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <junit.version>4.13.2</junit.version>
         <lombok.version>1.18.22</lombok.version>
         <rest-assured.version>4.4.0</rest-assured.version>
@@ -42,7 +43,6 @@
             <version>${rest-assured.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>com.squareup.moshi</groupId>
             <artifactId>moshi</artifactId>
@@ -55,7 +55,6 @@
             <version>${moshi.version}</version>
             <scope>runtime</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -63,7 +62,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <annotationProcessorPaths>
                         <path>

@@ -11,7 +11,11 @@ import org.apache.http.HttpStatus;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.hasValue;
+
 public class NegativeAuthServiceTest extends BaseBookerTest {
+
+    private static final String BAD_CREDS = "Bad credentials";
 
     @BeforeClass
     public static void setup() {
@@ -22,6 +26,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .build();
         RestAssured.responseSpecification = new ResponseSpecBuilder()
                 .expectContentType(ContentType.JSON)
+                .expectStatusCode(HttpStatus.SC_OK)
                 .build();
     }
 
@@ -31,7 +36,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .when()
                 .post()
                 .then()
-                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+                .body("$", hasValue(BAD_CREDS));
     }
 
     @Test
@@ -45,7 +50,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .when()
                 .post()
                 .then()
-                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+                .body("$", hasValue(BAD_CREDS));
     }
 
     @Test
@@ -59,7 +64,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .when()
                 .post()
                 .then()
-                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+                .body("$", hasValue(BAD_CREDS));
     }
 
     @Test
@@ -74,7 +79,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .when()
                 .post()
                 .then()
-                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+                .body("$", hasValue(BAD_CREDS));
     }
 
     @Test
@@ -89,7 +94,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .when()
                 .post()
                 .then()
-                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+                .body("$", hasValue(BAD_CREDS));
     }
 
     @Test
@@ -104,7 +109,7 @@ public class NegativeAuthServiceTest extends BaseBookerTest {
                 .when()
                 .post()
                 .then()
-                .statusCode(HttpStatus.SC_UNAUTHORIZED);
+                .body("$", hasValue(BAD_CREDS));
     }
 
 }

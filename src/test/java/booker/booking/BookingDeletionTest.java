@@ -33,7 +33,7 @@ public class BookingDeletionTest extends BaseBookerTest {
                 .cookie("token", token())
                 .delete("/" + bookingID)
                 .then()
-                .statusCode(HttpStatus.SC_OK);
+                .statusCode(HttpStatus.SC_CREATED);
 
         RestAssured.given()
                 .contentType(ContentType.TEXT)
