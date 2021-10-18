@@ -68,26 +68,26 @@ public class BookingServiceTest extends BaseBookerTest {
 
     @Test
     public void canUpdateBooking() {
-        Integer bookingID = BookingHelper.randomBookingID();
+        String bookingIDpath = "/" + BookingHelper.randomBookingID();
 
         RestAssured.given()
                 .cookie("token", token())
                 .body(BookingHelper.toJson(testBooking, Booking.class))
                 .when()
-                .put("/" + bookingID)
+                .put(bookingIDpath)
                 .then()
                 .body("firstname", hasToString(testBooking.getFirstName()));
     }
 
     @Test
     public void canPatchBooking() {
-        Integer bookingID = BookingHelper.randomBookingID();
+        String bookingIDpath = "/" + BookingHelper.randomBookingID();
 
         RestAssured.given()
                 .cookie("token", token())
                 .body("{ \"firstname\" : \"Jane\", \"lastname\" : \"Doe\"}")
                 .when()
-                .patch("/" + bookingID)
+                .patch(bookingIDpath)
                 .then()
                 .body("firstname", hasToString("Jane"));
     }
